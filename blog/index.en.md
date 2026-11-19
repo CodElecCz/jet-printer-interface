@@ -7,6 +7,7 @@ tags:
   - Qt
   - C++
   - JetPrinter
+  - LEIBINGER JET3
   - PLC
   - manufacturing
 repo: CodElecCz/jet-printer-interface
@@ -15,13 +16,13 @@ featured: true
 
 # Project overview
 
-JetPrinterUI is a Qt Widgets desktop application for an ink printing station. It brings the printer controls and production-station workflow into one interface, with dedicated views for printer operation, PLC state, production programs, settings, and reports. The project is written in C++ and the Qt project file enables the Core, Gui, Widgets, SQL, Network, and XML modules.
+JetPrinterUI is a Qt Widgets desktop application designed for a marking station equipped with a LEIBINGER JET3 industrial continuous inkjet (CIJ) printer. It brings the printer controls and production-station workflow into one interface, with dedicated views for printer operation, PLC state, production programs, settings, and reports. The project is written in C++ and the Qt project file enables the Core, Gui, Widgets, SQL, Network, and XML modules.
 
 The main window builds its tabs from configuration, allowing the installation to expose the views needed by its operators. Printer and PLC communication are handled by the project libraries under `Lib/`; the UI provides a working view of station activity rather than requiring operators to work directly with those protocol interfaces.
 
 # Printer and station workflow
 
-The printer view presents machine and print states and provides controls for power, starting or stopping a print, and opening or closing the nozzle. The PLC view monitors the station sequence, including loading a part, checking sensors, preparing the print, waiting for the operator, and completing the cycle. Statuses such as a sensor error or a request to remove the part are shown in the interface.
+The printer view presents machine and print states and provides controls for power, starting or stopping a print, and opening or closing the nozzle. On the LEIBINGER JET3, these nozzle controls correspond to its automated nozzle seal system, which helps prevent ink from drying during idle states. The PLC view monitors the station sequence, including loading a part, checking sensors, preparing the print, waiting for the operator, and completing the cycle. Statuses such as a sensor error or a request to remove the part are shown in the interface.
 
 Production programs are configured with a job file and options for inserts, sensors, and the start button. The sample `settings.ini` contains six short- and long-part program variants, each linked to a job under `LJ3/Jobs/`. This keeps the selected job and station setup together for each product variant.
 
